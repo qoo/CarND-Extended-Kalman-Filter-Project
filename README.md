@@ -7,6 +7,11 @@ This project involves the Term 2 Simulator which can be downloaded [here](https:
 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see [this concept in the classroom](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77) for the required version and installation scripts.
 
+# install
+## uWebSocketIO
+see the bottom
+## build
+
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
 
 1. mkdir build
@@ -123,6 +128,53 @@ and how to install it.
 
 Regardless of the IDE used, every submitted project must
 still be compilable with cmake and make.
+
+## Reference
+```
+Linux
+Steps
+Ensure all dependencies are present per project resources
+Clone the project repository
+Follow these the instructions in the uWebSocketIO starter guide (From the project repository directory run the script: install-ubuntu.sh.
+on the command line execute ./install-ubuntu.sh
+build and run according to the instructions in the project repository README
+Trouble Shooting
+These steps are similar to those with Ubuntu BASH on Windows 10, above.
+
+.sh files not recognized on run: Try chmod a+x <filename.sh> for example chmod a+x install-ubuntu.sh
+Messages regarding 404s, missing resources, and a variety of other error messages can be addressed by updates and other means, per this post and this post, and this post. The general steps are:
+Not all steps will be necessary, for example, installing git and cloning the project repository, if this has already been done.
+
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install cmake
+sudo apt-get install openssl
+sudo apt-get install libssl-dev
+git clone https://github.com/udacity/CarND-Kidnapped-Vehicle-Project or whatever CarND project
+sudo rm /usr/lib/libuWS.so
+navigate to CarND-Kidnapped-Vehicle-Project/
+./install-ubuntu.sh
+at the top level of the project repository mkdir build && cd build
+from /build cmake .. && make
+Launch the simulator from Windows and execute the run command for the project, for example ./ExtendedKF or ./particle_filter (Make sure you also run the simulator) If you see this message, it is working Listening to port 4567 Connected!!!
+After following these steps there may be some messages regarding makefile not found or can't create symbolic link to websockets. There is likely nothing wrong with the installation. Before doing any other troubleshooting make sure that steps 10 and 11 have been executed from the top level of the project directory, then test the installation using step 12.
+
+Step 9 may fail for number of reasons as listed below:
+
+install-ubuntu.sh has only rw but no x permission. Run chmod a+x install-ubuntu.sh to give execution permission
+Cannot find the package libuv1-dev
+To install the package run sudo apt-get install libuv1.dev
+If you still cannot install the package run the following to get the package and install it:
+sudo add-apt-repository ppa:acooks/libwebsockets6
+sudo apt-get update
+sudo apt-get install libuv1.dev
+May complain about the version of cmake you have. You need a version greater than 3.0. Here is a link which describes how to get version 3.8. Look at Teocci's response in this link
+Installing cmake requires g++ compiler. Install a g++ version 4.9 or greater. Here are the steps:
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install g++-4.9
+A Note Regarding Step 11 This step can fail if the bash shell is still referring to an older g++ version. To address this, please refer to this Ask Ubuntu post.
+```
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
