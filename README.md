@@ -130,7 +130,7 @@ Regardless of the IDE used, every submitted project must
 still be compilable with cmake and make.
 
 ## Reference
-
+```txt
 Linux
 Steps
 Ensure all dependencies are present per project resources
@@ -174,7 +174,7 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install g++-4.9
 A Note Regarding Step 11 This step can fail if the bash shell is still referring to an older g++ version. To address this, please refer to this Ask Ubuntu post.
-
+```
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
